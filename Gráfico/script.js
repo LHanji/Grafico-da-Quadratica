@@ -31,7 +31,6 @@ function main() {
 	h = 500;
 	canvas = document.getElementById("canvas1");
 	ctx = canvas.getContext("2d");
-	ctx.clearRect(0, 0, canvas.width, canvas.height);
 	var x0 = -10;
 	var xf = 10;
 	var x = x0;
@@ -40,6 +39,7 @@ function main() {
 	ctx.translate(250, 250);
 	ctx.beginPath();
 	ctx.moveTo(xt(-10), yt(0));
+	ctx.lineWidth = 3;
 	ctx.lineTo(xt(10), yt(0));
 	ctx.moveTo(xt(0), yt(-100));
 	ctx.lineTo(xt(0), yt(100));
@@ -53,4 +53,11 @@ function main() {
 	}
 	ctx.stroke();
 	ctx.restore();
+}
+function clearPainel() {
+	canvas = document.getElementById("canvas1");
+    ctx = canvas.getContext("2d");
+	ctx.clearRect(0, 0, canvas.width, canvas.height);
+	console.log(ctx);
+	
 }
